@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/my_simple_jquery.js"></script>
+</head>
+<body>
+<form action="" id="form1">
+    用户名：
+    <input type="text" id="name">
+    <br>
+    密码：
+    <input type="password" id="pas1">
+    <br>
+    确认密码：
+    <input type="password" id="pas2"><br>
+    <input type="submit">
+</form>
+
+
+</body>
+
+<script>
+    window.onload = function () {
+        var form = $('form1');
+        form.onsubmit = function () {
+            var name = $('name').value;
+            if (name.length <6 || name.length >18){
+                alert('用户名必须在6到18位之间');
+                return false;
+            }
+
+            var pas1 = $('pas1').value;
+
+            if (pas1.length <6 || pas1.length >18){
+                alert('密码必须在6到18位之间');
+                return false;
+            }
+            var pas2 = $('pas2').value;
+            if (pas2 != pas1){
+                alert('两次密码不一致');
+                return false;
+            }
+        }
+    }
+
+</script>
+
+
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gouwuTable</title>
+    <style>
+        table
+{
+border-collapse:collapse;
+            width:100%;
+}
+table,th, td
+{
+border: 1px solid black;
+
+}
+        td{
+            width:25%;
+        }
+        tr:hover{
+            background-color: blue;
+        }
+
+        input{
+            width:100px;
+        }
+    </style>
+</head>
+<body >
+<input id = 'in1' type="text" placeholder="输入商品名称">
+<input id = 'in2' type="text" placeholder="输入价格">
+<input id = 'in3' type="text" placeholder="购买数量">
+<button onclick="addtr()">增加</button>
+
+<table id = 'tab1'>
+    <thead>
+        <tr>
+            <td>商品名称</td>
+            <td>商品价格</td>
+            <td>商品数量</td>
+            <td>操作</td>
+        </tr>
+    </thead>
+
+
+</table>
+
+<script>
+    function $(id) {
+        return document.getElementById(id)
+    }
+
+    function addtr() {
+        var tab = $(tab1);
+        var tr  = document.createElement('tr');
+        var td1 = document.createElement('td');
+        var td2 = document.createElement('td');
+        var td3 = document.createElement('td');
+        var td4 = document.createElement('td');
+        var in1value = $('in1').value;
+        var in2value = $('in2').value;
+        var in3value = $('in3').value;
+        var btn1 = document.createElement('button');
+        var btn2 = document.createElement('button');
+        btn1.innerHTML='删除';
+        btn1.setAttribute('onclick',"del(this)");
+        btn2.innerHTML='修改';
+        btn2.setAttribute('onclick',"modify(this)")
+        td4.appendChild(btn1);
+        td4.appendChild(btn2);
+        td1.innerHTML=in1value;
+        td2.innerHTML=in2value;
+        td3.innerHTML=in3value;
+
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+        tr.appendChild(td4);
+        tab1.appendChild(tr);
+
+    }
+
+
+    function del(self){
+        var par = self.parentElement.parentNode.parentNode
+        var tr = self.parentElement.parentNode
+        par.removeChild(tr)
+    }
+
+    function modify(self) {
+        if (self.innerHTML=="修改"){
+
+            self.innerHTML="确定";
+            var td_price = self.parentNode.previousSibling.previousSibling;
+            var td_count = self.parentNode.previousSibling;
+            var price_inp = document.createElement('input');
+            var button_del = document.createElement('button');
+            var count_inp = document.createElement('input');
+            var button_add = document.createElement('button')
+            price_inp.value=td_price.innerHTML;
+            td_price.innerHTML="";
+            count_inp.value=td_count.innerHTML;
+            td_count.innerHTML="";
+            button_del.innerHTML="-"
+            button_add.innerHTML="+"
+            button_del.setAttribute('onclick',"action('-')")
+            button_add.setAttribute('onclick',"action('+')")
+            td_price.appendChild(price_inp)
+            td_count.appendChild(button_del)
+            td_count.appendChild(count_inp)
+            td_count.appendChild(button_add)
+        }else{
+            self.innerHTML ="修改"
+            var td_price = self.parentNode.previousSibling.previousSibling
+            var td_count = self.parentNode.previousSibling
+            var price = td_price.childNodes[0].value
+            var count = td_count.childNodes[1].value
+            td_price.innerHTML=price;
+            td_count.innerHTML=count;
+        }
+    }
+
+    function action(b) {
+        if (b=='-'){
+            var inp_count = event.target.nextSibling;
+            inp_count.value>1?inp_count.value--:inp_count.value=1;
+        }else{
+            var inp_count = event.target.previousSibling;
+            inp_count.value++;
+        }
+
+    }
+
+
+
+</script>
+
+</body>
+</html>

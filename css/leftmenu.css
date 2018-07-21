@@ -1,0 +1,32 @@
+.left{
+    float: left;
+    background-color: #1eff43;
+    width:20%;
+    margin-left: 10px;
+
+
+}
+
+.right{
+    float: left;
+    background-color: aqua;
+    width: 60%;
+    margin-left: 10px;
+}
+
+.left,.right{
+    height: 500px;
+    border: 1px solid black;
+}
+
+ul{
+    list-style:none;
+}
+
+.menu:hover{
+    background-color: red;
+}
+
+.hide{
+    display: none;
+}

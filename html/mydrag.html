@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <style>
+        body{
+            position: relative;
+        }
+        .container{
+            border:1px solid black;
+            width:500px;
+            height:300px;
+            position:absolute;
+        }
+        .title{
+            height:30px;
+            background-color: black;
+            color: white;
+        }
+        .content{
+
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="title">标题</div>
+    <div class="content">内容</div>
+</div>
+
+<script>
+    $(function () {
+        $('.title').css('cursor','move').mousedown(function (e) {
+
+
+            var oldx = event.clientX;
+            var oldy = event.clientY;
+
+            var parentx=$(this).parent().offset().left;
+            var parenty=$(this).parent().offset().top;
+
+            $(this).bind('mousemove',function (e) {
+
+
+                var newx = event.clientX;
+                var newy= event.clientY;
+
+                var x = parentx+(newx-oldx)
+                var y = parenty+(newy-oldy)
+
+                $(this).parent().css('left',x+'px');
+                $(this).parent().css('top',y+'px')
+            })
+
+        }).mouseup(function () {
+
+            $(this).unbind('mousemove')
+        })
+
+        $(window).mouseup(function () {
+            $('.title').unbind('mousemove')
+        })
+        
+        
+    })
+
+</script>
+
+</body>
+</html>

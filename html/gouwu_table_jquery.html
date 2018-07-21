@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery.js"></script>
+    <style>
+        input{
+            width:100px;
+        }
+        table{
+            width:100%;
+        }
+        td{
+            width:25%;
+        }
+        table,tr,td{
+            border:1px solid #000;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+
+<input id = 'name' placeholder="商品名称"></input>
+<input id = 'price' placeholder="商品价格"></input>
+<input id = 'count' placeholder="商品数量"></input>
+<button id = 'add'>增加</button>
+
+<table>
+    <thead>
+    <tr>
+        <td>名称</td>
+        <td>价格</td>
+        <td>数量</td>
+        <td>操作</td>
+    </tr>
+    </thead>
+</table>
+<script>
+    $('#add').click(function () {
+//        alert(1234);
+        var name = $('name').val();
+        var price = $('price').val();
+        var count = $('count').val();
+        var tr = $('<tr>');
+        var td1 = $('<td>');
+        var td2 = $('<td>');
+        var td3 = $('<td>');
+        var td4 = $('<td>');
+        var btn1 = $('<button>删除</button>');
+        var btn2 = $('<button>修改</button>');
+
+        td1.html(name);
+        td2.html(price);
+        td3.html(count);
+        td4.append(btn1);
+        td4.append(btn2);
+
+        tr.append(td1);
+        tr.append(td2);
+        tr.append(td3);
+        tr.append(td4);
+
+        tr.appendTo($('table'))
+
+
+
+    })
+    $(function () {
+        console.log(1234)
+    })
+</script>
+
+
+</body>
+</html>

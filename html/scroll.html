@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .hide{
+            display: none;
+        }
+        #d1{
+            height: 100px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<script src ='../js/jquery.js'></script>
+<body>
+
+<textarea name="" id="txt1" cols="30" rows="10"></textarea>
+<button>显示</button>
+<div id="d1" class=""></div>
+
+</body>
+<script>
+    $('button').click(function () {
+//        alert(1234);
+        var content = $('#txt1').val();
+        var $h1 = $('<h1>');
+        $h1.html(content);
+        $('#d1').append($h1);
+        $('#txt1').toggleClass('hide')
+    })
+
+
+</script>
+</html>

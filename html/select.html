@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery.js"></script>
+</head>
+<body>
+
+<button onclick="action('a')">全选</button>
+<button onclick="action('na')">全不选</button>
+<button onclick="action('f')">反选</button>
+<div id="sels">
+    <p>
+    <input type="checkbox" >111
+    </p><p>
+    <input type="checkbox" >222
+    </p><p>
+    <input type="checkbox" >333
+    </p><p>
+    <input type="checkbox" >444
+    </p><p>
+    <input type="checkbox" >555
+    </p>
+</div>
+</body>
+
+<script>
+
+        function action(b) {
+            var $inps =$('#sels input');
+            if (b=='a'){
+                $inps.prop('checked',true)
+            }else if (b=='na'){
+                $inps.prop('checked',false)
+            }else{
+                $inps.each(function () {
+                    $(this).prop('checked',!$(this).prop('checked'))
+                })
+            }
+        }
+
+
+</script>
+</html>

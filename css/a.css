@@ -1,0 +1,19 @@
+        #a1 {
+            display:inline;
+            border:solid 1px #1eff43;
+            width:100px;
+            opacity: 0.5;
+        }
+
+        #a2 {
+            display:block;border:solid 1px red;
+            width:100px;
+        }
+
+        #a3 {
+            display:inline-block;;border:solid 1px red;
+        }
+
+        #a4 {
+            display:inline-block;border:solid 1px red;
+        }

@@ -1,0 +1,9 @@
+div {
+    display: inline-block;
+    font-size: 20px;
+    background-color: red;
+}
+
+img {
+    width:300px;
+}

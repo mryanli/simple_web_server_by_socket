@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/my_simple_jquery.js"></script>
+    <style>
+        #container{
+            position: relative;
+        }
+        #pic{
+            position: absolute;
+            left: 200px;
+            top:0;
+        }
+        #show{
+            width: 100px;
+            height:100px;
+            background-color: red;
+        }
+
+        #pic{
+            width: 100px;
+            height:100px;
+            background-color: yellow;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id = 'container'>
+
+    <div id = 'show'>
+
+    </div>
+    <div id = 'pic'></div>
+</div>
+
+<p>
+    <input type="text" id ='txt'>
+</p>
+
+<script>
+    window.onload=function () {
+        $('show').onmouseover = function () {
+            $('pic').style.display = 'block'
+        };
+        $('show').onmouseout = function () {
+            $('pic').style.display = 'none'
+            event.stopPropagation()
+        };
+
+        $('show').onmousemove = function () {
+            $('pic').innerHTML = event.screenX + ":" +event.screenY
+        };
+
+        $('txt').onkeydown = function () {
+            console.log('down:',event.which)
+        };
+        $('txt').onkeypress = function () {
+            console.log('press:',event.which)
+        }
+
+
+
+
+    }
+
+</script>
+
+</body>
+</html>

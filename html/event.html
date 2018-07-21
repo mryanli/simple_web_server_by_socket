@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/my_simple_jquery.js"></script>
+</head>
+<body>
+
+<button onclick="btn1()">按钮1</button>
+<button id = 'btn2'>按钮2</button>
+
+</body>
+
+<script>
+    function btn1() {
+        console.log(event.offsetX,event.offsetY)
+    }
+
+    $('btn2').onclick = function () {
+        console.log(event)
+    }
+
+</script>
+</html>

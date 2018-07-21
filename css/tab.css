@@ -1,0 +1,48 @@
+ul{
+    list-style-type: none;
+    margin:0;
+padding:0;
+}
+
+li{
+    display: inline-block;
+    width: 50px;
+    background-color: #1eff43;
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+}
+
+li:hover{
+    background-color: beige;
+}
+
+.tab{
+    height: 300px;
+    width:600px;
+    position: absolute;
+
+}
+#div1{
+    background-color: #1eff43;
+    z-index: 100;
+}
+#div2{
+    background-color: #33f;
+}
+#div3{
+    background-color: #fab;
+}
+#div4{
+    background-color: #ff1;
+}
+
+.hide{
+    display: none;
+}
+
+.current{
+    background-color: #ffff11;
+}
+

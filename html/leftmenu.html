@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery.js"></script>
+    <link href="../css/leftmenu.css" rel="stylesheet" type="text/css"/>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<div id='content'>
+    <div class='left'>
+        <div  id = 'm1' class="menu">
+            <p>菜单一</p>
+            <ul>
+                <li>操作1</li>
+                <li>操作2</li>
+                <li>操作3</li>
+                <li>操作4</li>
+            </ul>
+        </div>
+        <div id = 'm2' class="menu">
+            <p>菜单二</p>
+            <ul>
+                <li>操作1</li>
+                <li>操作2</li>
+                <li>操作3</li>
+                <li>操作4</li>
+            </ul>
+        </div>
+        <div id = 'm3' class="menu">
+            <p>菜单三</p>
+            <ul>
+                <li>操作1</li>
+                <li>操作2</li>
+                <li>操作3</li>
+                <li>操作4</li>
+            </ul>
+        </div>
+
+    </div>
+    <div class='right'></div>
+</div>
+
+<script>
+    $(function () {
+        $('.menu').find('ul').addClass('hide');
+
+        $('.menu').click(function () {
+            $(this).siblings().find('ul').addClass('hide');
+            $(this).find('ul').removeClass('hide');
+        })
+    })
+</script>
+</body>
+</html>

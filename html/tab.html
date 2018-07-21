@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab</title>
+    <link rel="stylesheet" href="../css/tab.css" type="text/css"/>
+    <script src="../js/jquery.js"></script>
+</head>
+<body>
+
+<div class="navi">
+    <ul>
+        <li id="tab1">tab1</li>
+        <li id="tab2">tab2</li>
+        <li id="tab3">tab3</li>
+        <li id='tab4'>tab4</li>
+    </ul>
+</div>
+
+<div id='tabs'>
+    <div id='div1' class='tab'>tab1</div>
+    <div id='div2' class='tab'>tab2</div>
+    <div id='div3' class='tab'>tab3</div>
+    <div id='div4' class='tab'>tab4</div>
+</div>
+
+</body>
+</html>
+
+<script>
+    $(function () {
+        $('.navi li').click(function () {
+            $(event.target).addClass('current').siblings().removeClass('current');
+            var index = $(this).attr('id').substr(-1,1)-1;
+            $('#tabs>.tab').addClass('hide');
+            $('#tabs>.tab').eq(index).removeClass('hide')
+
+
+        })
+    })
+</script>
